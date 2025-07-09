@@ -1,4 +1,3 @@
-
 import pickle
 
 def load_model(disease):
