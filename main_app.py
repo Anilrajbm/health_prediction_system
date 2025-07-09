@@ -8,7 +8,10 @@ from chatbot_module import get_health_tips
 st.set_page_config(page_title="Health Prediction System", layout="centered")
 st.title("🩺 Health Prediction System")
 
-disease = st.selectbox("Choose Disease to Predict", ["Diabetes", "Heart Disease", "Parkinson's"])
+disease = st.selectbox(
+    "Choose Disease to Predict",
+    ["Diabetes", "Heart Disease", "Parkinson's"]
+)
 
 if disease:
     input_data = get_user_input(disease)
