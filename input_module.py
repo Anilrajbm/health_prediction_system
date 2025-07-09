@@ -29,16 +29,34 @@ def get_user_input(disease):
         thal = st.selectbox("Thal", [0, 1, 2, 3])
         return [age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]
 
-    elif disease == "Parkinson's":
-        fo = st.number_input("MDVP:Fo(Hz)", 0.0, 300.0)
-        fhi = st.number_input("MDVP:Fhi(Hz)", 0.0, 300.0)
-        flo = st.number_input("MDVP:Flo(Hz)", 0.0, 300.0)
-        jitter_percent = st.number_input("MDVP:Jitter(%)", 0.0, 1.0)
-        shimmer = st.number_input("MDVP:Shimmer", 0.0, 1.0)
-        rap = st.number_input("MDVP:RAP", 0.0, 1.0)
-        ddp = st.number_input("MDVP:DDP", 0.0, 1.0)
-        apq = st.number_input("Shimmer:APQ3", 0.0, 1.0)
-        spread1 = st.number_input("Spread1", -10.0, 10.0)
-        spread2 = st.number_input("Spread2", -10.0, 10.0)
-        d2 = st.number_input("D2", 0.0, 4.0)
-        return [fo, fhi, flo, jitter_percent, shimmer, rap, ddp, apq, spread1, spread2, d2]
+  elif disease == "Parkinson's":
+    fo = st.number_input("MDVP:Fo(Hz)", 0.0, 300.0)
+    fhi = st.number_input("MDVP:Fhi(Hz)", 0.0, 300.0)
+    flo = st.number_input("MDVP:Flo(Hz)", 0.0, 300.0)
+    jitter_percent = st.number_input("MDVP:Jitter(%)", 0.0, 1.0)
+    jitter_abs = st.number_input("MDVP:Jitter(Abs)", 0.0, 0.1)
+    rap = st.number_input("MDVP:RAP", 0.0, 1.0)
+    ppq = st.number_input("MDVP:PPQ", 0.0, 1.0)
+    ddp = st.number_input("Jitter:DDP", 0.0, 1.0)
+    shimmer = st.number_input("MDVP:Shimmer", 0.0, 1.0)
+    shimmer_db = st.number_input("MDVP:Shimmer(dB)", 0.0, 3.0)
+    apq3 = st.number_input("Shimmer:APQ3", 0.0, 1.0)
+    apq5 = st.number_input("Shimmer:APQ5", 0.0, 1.0)
+    apq = st.number_input("MDVP:APQ", 0.0, 1.0)
+    dda = st.number_input("Shimmer:DDA", 0.0, 1.0)
+    nhr = st.number_input("NHR", 0.0, 1.0)
+    hnr = st.number_input("HNR", 0.0, 50.0)
+    rpde = st.number_input("RPDE", 0.0, 1.0)
+    dfa = st.number_input("DFA", 0.0, 1.0)
+    spread1 = st.number_input("Spread1", -10.0, 10.0)
+    spread2 = st.number_input("Spread2", -10.0, 10.0)
+    d2 = st.number_input("D2", 0.0, 5.0)
+    ppe = st.number_input("PPE", 0.0, 1.0)
+
+    return [
+        fo, fhi, flo, jitter_percent, jitter_abs,
+        rap, ppq, ddp, shimmer, shimmer_db,
+        apq3, apq5, apq, dda, nhr, hnr,
+        rpde, dfa, spread1, spread2, d2, ppe
+    ]
+
